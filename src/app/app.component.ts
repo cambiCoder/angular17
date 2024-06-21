@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { BuscarSuperheroeComponent } from './buscar-superheroe/buscar-superheroe.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ListaTareasComponent } from "./lista-tareas/lista-tareas.component";
+
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    standalone: true,
+    template: '<router-outlet></router-outlet>',
+    styleUrls: ['./app.component.css'],
+    imports: [CommonModule, RouterOutlet, HttpClientModule]
 })
 export class AppComponent {
-  title = 'example-app';
+  title = 'superheroe-app';
 }

@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Lista de Tareas</h1>
+    
+    <div class="form-group">
+      <input 
+        [(ngModel)]="nuevaTarea" 
+        (keyup.enter)="agregarTarea()"
+        placeholder="Nueva tarea"
+        class="form-control"
+      >
+      <button (click)="agregarTarea()" class="btn-agregar">Agregar Tarea</button>
+    </div>
+  
+    <ul class="lista-tareas">
+      @for (tarea of tareas; track tarea.id) {
+        <li>{{ tarea.nombre }}</li>
+      } @empty {
+        <li class="no-tareas">No hay tareas aún</li>
+      }
+    </ul>
+  </div>

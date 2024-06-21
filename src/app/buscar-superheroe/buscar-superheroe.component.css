@@ -1,0 +1,117 @@
+/* src/app/buscar-superheroe/buscar-superheroe.component.css */
+
+:root {
+    --primary-color: #007bff; /* Updated primary color for consistency */
+    --secondary-color: #2c3e50;
+    --background-color: #ecf0f1;
+    --hover-color: #0056b3; /* Darker for better contrast on hover */
+    --disabled-color: #95a5a6;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 50%; /* Responsive width */
+    margin: 0 auto;
+    padding: 20px;
+    font-family: var(--font-family);
+    color: var(--secondary-color);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevents content overflow */
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid ; /* Subtle borders initially */
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease; /* Smooth transitions for all properties */
+    background-color: var(--background-color);
+}
+
+.search-input:focus {
+    border-color: var(--hover-color);
+    box-shadow: 0 0 8px rgba(37, 183, 66, 0.5); /* Adding focus shadow */
+}
+
+
+
+.results {
+    margin-top: 30px;
+}
+
+.hero-card {
+    display: flex;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-right: 5px solid var(--primary-color);
+}
+
+.hero-info {
+    padding: 20px;
+    flex: 1;
+}
+
+.hero-info h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.hero-info p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.hero-info p strong {
+    color: var(--secondary-color);
+}
+.search-button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #4CAF50; /* Updated background color */
+    color: white; /* Updated text color to white */
+    border: 2px solid #4CAF50; /* Updated border color to match the background */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
