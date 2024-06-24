@@ -1,21 +1,31 @@
 <div class="container">
-    <h1>Lista de Tareas</h1>
-    
-    <div class="form-group">
-      <input 
-        [(ngModel)]="nuevaTarea" 
-        (keyup.enter)="agregarTarea()"
-        placeholder="Nueva tarea"
-        class="form-control"
-      >
-      <button (click)="agregarTarea()" class="btn-agregar">Agregar Tarea</button>
-    </div>
+
+  <h1>Lista de Tareas</h1>
   
-    <ul class="lista-tareas">
-      @for (tarea of tareas; track tarea.id) {
-        <li>{{ tarea.nombre }}</li>
-      } @empty {
-        <li class="no-tareas">No hay tareas aún</li>
-      }
-    </ul>
+  <div class="p-inputgroup">
+    <input pInputText [(ngModel)]="nuevaTarea" (keyup.enter)="agregarTarea()" placeholder="Nueva tarea">
+    <p-button type="button" (click)="agregarTarea()" label="Agregar Tarea" />
   </div>
+
+  <ul class="lista-tareas">
+    @for (tarea of tareas; track tarea.id) {
+      <li>
+        {{ tarea.nombre }}
+        <button pButton type="button" (click)="editarTarea(tarea)" icon="pi pi-pencil" class="p-button-success"> </button>
+        <button pButton type="button" (click)="eliminarTarea(tarea.id)" icon="pi pi-trash" class=" p-button-warning p-button-rounded "></button>
+      </li>
+    } @empty {
+      <li class="no-tareas">No hay tareas aún</li>
+    }
+  </ul>
+</div>
+
+<p-dialog header="Editar Tarea" [(visible)]="dialogVisible" [modal]="true">
+  <div class="p-field">
+    <label for="nombre">Nombre de la tarea</label>
+    <input id="nombre" type="text" pInputText [(ngModel)]="tareaEditando.nombre">
+  </div>
+  <ng-template pTemplate="footer">
+    <button pButton type="button" (click)="guardarEdicion()" label="Guardar"></button>
+  </ng-template>
+</p-dialog>
